@@ -1,0 +1,97 @@
+.hero {
+  height: 70vh;
+  background-image: url('/images/hermanosjota.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 6%;
+}
+
+.hero-text {
+  max-width: 500px;
+  background: rgba(245, 230, 211, 0.85);
+  padding: 30px 40px;
+  border-left: 6px solid var(--siena-tostado);
+  border-radius: 4px;
+}
+
+.hero-text h1 {
+  font-family: var(--font-secundaria);
+  font-size: 38px;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.hero-text p {
+  font-family: var(--font-primaria);
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.hero-btn {
+  background-color: var(--siena-tostado);
+  color: white;
+  padding: 12px 22px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: 0.1em;
+  transition: 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: var(--verde-salvia);
+}
+
+.destacada {
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.destacada h2 {
+  font-family: var(--font-secundaria);
+  font-size: 32px;
+  color: var(--siena-tostado);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.destacada p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 15px;
+  color: #444;
+}
+
+.destacada-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  padding: 0 40px;
+}
+
+.destacada-card {
+  background: white;
+  padding: 20px;
+  border-radius: 6px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.destacada-card:hover {
+  transform: scale(1.03);
+}
+
+.destacada-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.destacada-card h3 {
+  font-family: var(--font-secundaria);
+  letter-spacing: 0.06em;
+  color: var(--siena-tostado);
+  font-size: 18px;
+}

@@ -1,24 +1,48 @@
-export default function Home() {
-return (
-    <div style={{ padding: "40px" }}>
-    <h1>Muebles que cuentan historias</h1>
+import "./Home.css";
 
-    <p style={{ maxWidth: "600px", marginTop: "20px" }}>
-        Cada pieza de Hermanos Jota nace de manos expertas y materiales nobles,
-        combinando herencia y sustentabilidad en diseños que perduran generaciones.
-    </p>
+const Home = () => {
+  return (
+    <div className="home-container">
 
-    <img 
-        src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4"
-        alt="Taller"
-        style={{ 
-        width: "100%", 
-        maxWidth: "800px", 
-        marginTop: "40px", 
-        borderRadius: "12px",
-        boxShadow: "0 4px 12px rgba(0,0,0,0.15)"
-        }}
-    />
+      {/* HERO */}
+      <section className="hero">
+        <div className="hero-text">
+          <h1>Artesanía que honra el pasado,<br />diseño que abraza el futuro.</h1>
+          <p>
+            Cada pieza cuenta la historia de manos expertas y materiales nobles.  
+            Diseñamos muebles que no solo acompañan tu hogar, sino tu vida.
+          </p>
+          <a href="/productos" className="hero-btn">Explorar Colección</a>
+        </div>
+      </section>
+
+      <section className="destacada">
+        <h2>Colección 2025</h2>
+        <p>
+          Inspirada en la calidez del optimismo de los años 60 y en la elegancia natural 
+          de los materiales sustentables.
+        </p>
+
+        <div className="destacada-grid">
+          <div className="destacada-card">
+            <img src="/images/mesa pampa.png" alt="Mesa Pampa" />
+            <h3>Mesa Comedor Pampa</h3>
+          </div>
+
+          <div className="destacada-card">
+            <img src="/images/sillon copacabana.png" alt="Sillón Copacabana" />
+            <h3>Sillón Copacabana</h3>
+          </div>
+
+          <div className="destacada-card">
+            <img src="/images/sofa patagonia.png" alt="Sofá Patagonia" />
+            <h3>Sofá Patagonia</h3>
+          </div>
+        </div>
+      </section>
+
     </div>
-);
-}
+  );
+};
+
+export default Home;
