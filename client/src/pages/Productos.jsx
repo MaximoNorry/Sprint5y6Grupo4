@@ -1,33 +1,33 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { fetchProductos } from '../api';
+import { useEffect, useState } from "react";
+import { getProductos } from "../api";
+
 export default function Productos() {
   const [productos, setProductos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  useEffect(()=> {
-    let mounted = true;
-    fetchProductos()
-      .then(data => { if (mounted) setProductos(data); })
-      .catch(err => { if (mounted) setError(err.message || 'Error'); })
-      .finally(()=> { if (mounted) setLoading(false); });
-    return ()=> mounted = false;
+
+  useEffect(() => {
+    getProductos().then(setProductos);
   }, []);
-  if (loading) return <p>Cargando productos...</p>;
-  if (error) return <p>Error: {error}</p>;
-  if (productos.length === 0) return <p>No hay productos aún.</p>;
+
   return (
-    <div>
-      <h2>Catálogo</h2>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
-        {productos.map(p => (
-          <li key={p._id} style={{ marginBottom: '1rem', border: '1px solid #eee', padding: '0.8rem' }}>
-            <h3><Link to={`/productos/${p._id}`}>{p.nombre}</Link></h3>
-            <p>{p.descripcion}</p>
-            <p><strong>${p.precio}</strong> — Stock: {p.stock}</p>
-          </li>
+    <div style={{ padding: "40px" }}>
+      <h1>Nuestras Piezas</h1>
+
+      <div 
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
+          gap: "20px",
+          marginTop: "30px"
+        }}
+      >
+        {productos.map((p) => (
+          <div className="card" key={p.id}>
+            <h3>{p.nombre}</h3>
+            <p>Precio: ${p.precio}</p>
+            <p>Stock: {p.stock}</p>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }

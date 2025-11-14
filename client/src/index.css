@@ -62,3 +62,18 @@ p {
   border-radius: 10px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
+
+.input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #c9c9c9;
+  border-radius: 6px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--siena);
+}
