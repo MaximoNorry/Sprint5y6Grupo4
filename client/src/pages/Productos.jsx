@@ -1,32 +1,42 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { getProductos } from "../api";
+import "./Productos.css";
 
 export default function Productos() {
   const [productos, setProductos] = useState([]);
+  const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    getProductos().then(setProductos);
+    async function cargar() {
+      try {
+        const data = await getProductos();
+        setProductos(data);
+      } catch (err) {
+        console.error("Error cargando productos:", err);
+      } finally {
+        setCargando(false);
+      }
+    }
+    cargar();
   }, []);
 
-  return (
-    <div style={{ padding: "40px" }}>
-      <h1>Nuestras Piezas</h1>
+  if (cargando) return <p className="cargando">Cargando productos...</p>;
 
-      <div 
-        style={{
-          display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))",
-          gap: "20px",
-          marginTop: "30px"
-        }}
-      >
+  return (
+    <div className="catalogo-container">
+      <h1 className="titulo-seccion">Catálogo</h1>
+
+      <div className="grid-productos">
         {productos.map((p) => (
-          <div className="card" key={p.id}>
+          <Link key={p._id} to={`/productos/${p._id}`} className="card-producto">
+            <img
+              src={`http://localhost:4000/images/${p.imagen}`}
+              alt={p.nombre}
+            />
             <h3>{p.nombre}</h3>
-            <p>Precio: ${p.precio}</p>
-            <p>Stock: {p.stock}</p>
-          </div>
+            <p className="precio">${p.precio}</p>
+          </Link>
         ))}
       </div>
     </div>

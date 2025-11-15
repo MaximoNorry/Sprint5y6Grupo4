@@ -5,14 +5,16 @@ import "./Navbar.css";
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <h1 className="logo">Hermanos Jota</h1>
-
-      <div className="links">
-        <Link to="/">Inicio</Link>
-        <Link to="/productos">Productos</Link>
-        <Link to="/crear">Crear Producto</Link>
-        <Link to="/contacto">Contacto</Link>
+      <div className="nav-logo">
+        <Link to="/">Hermanos Jota</Link>
       </div>
+
+      <ul className="nav-links">
+        <li><Link to="/">Inicio</Link></li>
+        <li><Link to="/productos">Productos</Link></li>
+        <li><Link to="/contacto">Contacto</Link></li>
+        <li><Link to="/admin/crear-producto" className="nav-admin">Crear Producto</Link></li>
+      </ul>
     </nav>
   );
 }
