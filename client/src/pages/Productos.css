@@ -25,6 +25,9 @@
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card-producto:hover {
@@ -34,14 +37,17 @@
 
 .card-producto img {
   width: 100%;
-  height: 210px;
+  height: 220px;
   object-fit: cover;
+  display: block;
 }
+
 
 .card-producto h3 {
   padding: 12px;
   color: var(--siena);
   font-size: 1.25rem;
+  text-align: center;
 }
 
 .precio {
@@ -49,4 +55,5 @@
   font-weight: bold;
   color: var(--oro);
   font-size: 1.2rem;
+  text-align: center;
 }
