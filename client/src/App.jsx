@@ -9,7 +9,6 @@ import Contacto from "./pages/Contacto.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Footer from "./components/Footer";
 
-
 function App() {
   return (
     <>
@@ -18,7 +17,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
         <Route path="/productos/:id" element={<ProductoDetalle />} />
-        <Route path="/crear-producto" element={<CrearProducto />} />
+        <Route path="/admin/crear-producto" element={<CrearProducto />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
       <Footer />

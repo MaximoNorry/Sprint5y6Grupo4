@@ -1,0 +1,70 @@
+.crear-producto {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  background: var(--alabastro);
+  border-radius: 16px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+.crear-producto h2 {
+  font-family: var(--font-secondary);
+  color: var(--siena);
+  font-size: 34px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+.crear-producto form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.crear-producto label {
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--siena);
+  margin-bottom: 4px;
+  letter-spacing: 0.03em;
+}
+
+.crear-producto input {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #c9baa9;
+  font-family: var(--font-primary);
+  font-size: 15px;
+  background: #ffffff;
+  transition: 0.25s ease;
+}
+
+.crear-producto input:focus {
+  border-color: var(--siena);
+  outline: none;
+  box-shadow: 0 0 5px rgba(160, 82, 45, 0.45);
+}
+
+
+.crear-producto button {
+  margin-top: 20px;
+  padding: 14px;
+  background: var(--siena);
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.crear-producto button:hover {
+  background: var(--salvia);
+}

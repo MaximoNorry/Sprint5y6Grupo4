@@ -1,34 +1,93 @@
-import { useState } from "react";
-import { crearProducto } from "../api";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./crearproducto.css";
+
 
 export default function CrearProducto() {
-  const [form, setForm] = useState({ nombre: "", precio: "", stock: "" });
+  const navigate = useNavigate();
+
+  const [formData, setFormData] = useState({
+    nombre: "",
+    descripcion: "",
+    precio: "",
+    categoria: "",
+    imagen: ""
+  });
 
   function handleChange(e) {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
   }
 
   async function handleSubmit(e) {
     e.preventDefault();
-    await crearProducto(form);
-    alert("Producto creado!");
+
+    try {
+      const res = await fetch("/api/productos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) {
+        console.error("Error al crear producto");
+        return;
+      }
+
+      // Opcional: obtener el producto creado
+      const nuevo = await res.json();
+
+      // Redirige al catálogo o a un detalle
+      navigate("/productos"); // o `/productos/${nuevo.id}`
+    } catch (error) {
+      console.error("Error en la petición", error);
+    }
   }
 
   return (
-    <div style={{ padding: "40px", maxWidth: "600px" }}>
-      <h1>Crear nuevo producto</h1>
+    <div className="crear-producto">
+      <h2>Crear Producto</h2>
 
-      <form className="card" style={{ marginTop: "20px" }} onSubmit={handleSubmit}>
-        <label>Nombre</label>
-        <input name="nombre" className="input" onChange={handleChange} />
+      <form onSubmit={handleSubmit}>
+        <label>Nombre:</label>
+        <input
+          name="nombre"
+          value={formData.nombre}
+          onChange={handleChange}
+        />
 
-        <label>Precio</label>
-        <input name="precio" className="input" type="number" onChange={handleChange} />
+        <label>Descripción:</label>
+        <input
+          name="descripcion"
+          value={formData.descripcion}
+          onChange={handleChange}
+        />
 
-        <label>Stock</label>
-        <input name="stock" className="input" type="number" onChange={handleChange} />
+        <label>Precio:</label>
+        <input
+          name="precio"
+          type="number"
+          value={formData.precio}
+          onChange={handleChange}
+        />
 
-        <button className="btn" style={{ marginTop: "20px" }}>Crear</button>
+        <label>Categoría:</label>
+        <input
+          name="categoria"
+          value={formData.categoria}
+          onChange={handleChange}
+        />
+
+        <label>Imagen (URL):</label>
+        <input
+          name="imagen"
+          value={formData.imagen}
+          onChange={handleChange}
+        />
+
+        <button type="submit">Crear</button>
       </form>
     </div>
   );

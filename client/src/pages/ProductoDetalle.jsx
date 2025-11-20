@@ -1,11 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { getProductoPorId } from "../api";
 import "./ProductoDetalle.css";
 
 export default function ProductoDetalle() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const [producto, setProducto] = useState(null);
   const [error, setError] = useState(false);
 
@@ -21,6 +23,26 @@ export default function ProductoDetalle() {
     }
     cargar();
   }, [id]);
+
+  async function handleDelete() {
+    const confirmar = window.confirm("¿Seguro que deseas eliminar este producto?");
+    if (!confirmar) return;
+
+    try {
+      const res = await fetch(`/api/productos/${id}`, {
+        method: "DELETE",
+      });
+
+      if (!res.ok) {
+        console.error("Error eliminando el producto");
+        return;
+      }
+
+      navigate("/productos");
+    } catch (error) {
+      console.error("Error en la petición DELETE", error);
+    }
+  }
 
   if (error) return <p>Error cargando el producto.</p>;
   if (!producto) return <p>Cargando...</p>;
@@ -56,6 +78,9 @@ export default function ProductoDetalle() {
           </div>
 
           <button className="hj-btn-comprar">AGREGAR AL CARRITO</button>
+          <button className="hj-btn-eliminar" onClick={handleDelete}>
+            ELIMINAR PRODUCTO
+          </button>
 
           <Link to="/productos" className="hj-volver">
             ← Volver al catálogo

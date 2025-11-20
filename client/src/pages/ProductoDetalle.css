@@ -100,3 +100,20 @@
   font-size: 16px;
   font-weight: 600;
 }
+
+.hj-btn-eliminar {
+  background-color: #d9534f;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: 0.2s ease-in-out;
+}
+
+.hj-btn-eliminar:hover {
+  background-color: #c9302c;
+}
