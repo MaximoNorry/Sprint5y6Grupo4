@@ -1,20 +1,36 @@
-const API_URL = "http://localhost:4000/api";
+const BASE_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:4000";
 
 export async function getProductos() {
-  const r = await fetch(`${API_URL}/productos`);
-  return r.json();
-}
-
-export async function crearProducto(data) {
-  const r = await fetch(`${API_URL}/productos`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-  return r.json();
+  const res = await fetch(`${BASE_URL}/api/productos`);
+  return res.json();
 }
 
 export async function getProductoPorId(id) {
-  const res = await fetch(`http://localhost:4000/api/productos/${id}`);
-  return await res.json();
+  const res = await fetch(`${BASE_URL}/api/productos/${id}`);
+  return res.json();
+}
+
+export async function crearProducto(data) {
+  const res = await fetch(`${BASE_URL}/api/productos`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function actualizarProducto(id, data) {
+  const res = await fetch(`${BASE_URL}/api/productos/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  return res.json();
+}
+
+export async function eliminarProducto(id) {
+  const res = await fetch(`${BASE_URL}/api/productos/${id}`, {
+    method: "DELETE",
+  });
+  return res.json();
 }
