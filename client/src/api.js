@@ -1,7 +1,7 @@
 const BASE_URL = import.meta.env.VITE_BACKEND_URL || "https://sprint5y6grupo4.onrender.com";
 
 export async function getProductos() {
-  const res = await fetch(`${BASE_URL}/api/productos`);
+  const res = await fetch(`${BASE_URL}/productos`);
   return res.json();
 }
 
