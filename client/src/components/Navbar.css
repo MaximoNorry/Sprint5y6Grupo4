@@ -11,14 +11,30 @@
   z-index: 1000;
 }
 
-.nav-logo a {
-  color: white;
-  font-family: "Playfair Display", serif;
-  font-size: 1.8rem;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   text-decoration: none;
-  letter-spacing: 0.05em;
 }
 
+.nav-logo-img {
+  height: 70px;
+  width: auto;
+  object-fit: contain;
+  margin-top: -10px;
+  margin-bottom: -10px;
+}
+
+.nav-logo span {
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+/* LINKS */
 .nav-links {
   list-style: none;
   display: flex;
@@ -30,7 +46,7 @@
   text-decoration: none;
   font-weight: 500;
   font-size: 1.05rem;
-  transition: 0.25s;
+  transition: 0.25s ease;
 }
 
 .nav-links a:hover {
@@ -43,25 +59,27 @@
   border-radius: 6px;
   font-weight: 600;
   transition: 0.25s;
+  color: #fff !important;
 }
 
 .nav-admin:hover {
   background-color: #b68a23;
-  color: white !important;
 }
 
-/* Responsivo */
 @media (max-width: 720px) {
   .navbar {
-    padding: 14px 20px;
+    padding: 12px 18px;
+  }
+
+  .nav-logo span {
+    font-size: 1.3rem;
+  }
+
+  .nav-logo-img {
+    height: 40px;
   }
 
   .nav-links {
     gap: 16px;
   }
-
-  .nav-logo a {
-    font-size: 1.4rem;
-  }
 }
-

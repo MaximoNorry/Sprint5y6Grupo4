@@ -7,12 +7,13 @@ import ProductoDetalle from "./pages/ProductoDetalle.jsx";
 import CrearProducto from "./pages/CrearProducto.jsx";
 import Contacto from "./pages/Contacto.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
     <>
       <Navbar />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/productos" element={<Productos />} />
@@ -20,6 +21,7 @@ function App() {
         <Route path="/crear-producto" element={<CrearProducto />} />
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
+      <Footer />
     </>
   );
 }

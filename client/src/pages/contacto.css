@@ -1,0 +1,71 @@
+.contacto-container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  background: var(--alabastro);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.contacto-titulo {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  color: var(--siena);
+  margin-bottom: 10px;
+}
+
+.contacto-descripcion {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contacto-form label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+  color: var(--siena);
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Inter", sans-serif;
+  transition: 0.3s;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  border-color: var(--siena);
+  outline: none;
+  box-shadow: 0 0 4px rgba(165, 74, 34, 0.4);
+}
+
+.btn-enviar {
+  background-color: var(--siena);
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.btn-enviar:hover {
+  background-color: #8f4e2a;
+}

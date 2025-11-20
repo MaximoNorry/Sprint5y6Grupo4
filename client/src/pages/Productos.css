@@ -2,6 +2,7 @@
   padding: 40px;
   margin: 0 auto;
   max-width: 1200px;
+  background-color: var(--alabastro);
 }
 
 .titulo-seccion {
