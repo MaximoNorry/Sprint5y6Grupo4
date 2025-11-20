@@ -13,3 +13,8 @@ export async function crearProducto(data) {
   });
   return r.json();
 }
+
+export async function getProductoPorId(id) {
+  const res = await fetch(`http://localhost:4000/api/productos/${id}`);
+  return await res.json();
+}

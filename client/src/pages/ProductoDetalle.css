@@ -1,0 +1,102 @@
+.hj-detalle-page {
+  background: #F5E6D3;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  font-family: 'Inter', sans-serif;
+}
+
+.hj-detalle-card {
+  background: white;
+  width: 90%;
+  max-width: 1300px;
+  display: flex;
+  gap: 60px;
+  padding: 50px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hj-img-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hj-detalle-img {
+  width: 100%;
+  max-width: 520px;
+  border-radius: 14px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hj-info {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.hj-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 44px;
+  font-weight: 700;
+  color: #A0522D;
+  letter-spacing: 0.5px;
+}
+
+.hj-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #4a3f35;
+}
+
+.hj-price-box {
+  margin-top: 10px;
+}
+
+.hj-price {
+  font-size: 40px;
+  font-weight: 700;
+  color: #A0522D;
+  font-family: 'Playfair Display', serif;
+}
+
+.hj-stock {
+  display: block;
+  margin-top: 8px;
+  font-size: 16px;
+  color: #87A96B;
+  font-weight: 500;
+}
+
+.hj-btn-comprar {
+  margin-top: 15px;
+  padding: 16px 26px;
+  background: #A0522D;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  width: 260px;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.hj-btn-comprar:hover {
+  background: #8b4529;
+}
+
+.hj-volver {
+  margin-top: 15px;
+  text-decoration: none;
+  color: #A0522D;
+  font-size: 16px;
+  font-weight: 600;
+}

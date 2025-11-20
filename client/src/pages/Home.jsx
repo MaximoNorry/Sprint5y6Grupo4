@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -13,7 +14,7 @@ const Home = () => {
             Cada pieza cuenta la historia de manos expertas y materiales nobles.  
             Diseñamos muebles que no solo acompañan tu hogar, sino tu vida.
           </p>
-          <a href="/productos" className="hero-btn">Explorar Colección</a>
+          <Link to="/productos" className="hero-btn">Explorar Colección</Link>
         </div>
       </section>
 
@@ -25,20 +26,28 @@ const Home = () => {
         </p>
 
         <div className="destacada-grid">
-          <div className="destacada-card">
-            <img src="/images/mesa pampa.png" alt="Mesa Pampa" />
-            <h3>Mesa Comedor Pampa</h3>
-          </div>
 
-          <div className="destacada-card">
-            <img src="/images/sillon copacabana.png" alt="Sillón Copacabana" />
-            <h3>Sillón Copacabana</h3>
-          </div>
+          <Link to="/productos/69168848462fe4d33b677f51">
+            <div className="destacada-card">
+              <img src="http://localhost:4000/images/mesacomedorpampa.png" alt="Mesa Pampa" />
+              <h3>Mesa Comedor Pampa</h3>
+            </div>
+          </Link>
 
-          <div className="destacada-card">
-            <img src="/images/sofa patagonia.png" alt="Sofá Patagonia" />
-            <h3>Sofá Patagonia</h3>
-          </div>
+          <Link to="/productos/691687ef462fe4d33b677f47">
+            <div className="destacada-card">
+              <img src="http://localhost:4000/images/silloncopacabana.png" alt="Sillón Copacabana" />
+              <h3>Sillón Copacabana</h3>
+            </div>
+          </Link>
+
+          <Link to="/productos/69168840462fe4d33b677f4f">
+            <div className="destacada-card">
+              <img src="http://localhost:4000/images/sofapatagonia.png" alt="Sofá Patagonia" />
+              <h3>Sofá Patagonia</h3>
+            </div>
+          </Link>
+
         </div>
       </section>
 

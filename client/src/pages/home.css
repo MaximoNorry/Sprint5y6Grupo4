@@ -1,97 +1,129 @@
+:root {
+  --siena-tostado: #A0522D;
+  --verde-salvia: #87A96B;
+  --alabastro: #F5E6D3;
+  --oro: #D4A437;
+  --rosa-polvo: #C47A6D;
+
+  --font-primaria: 'Inter', sans-serif;
+  --font-secundaria: 'Playfair Display', serif;
+}
+
 .hero {
   height: 70vh;
-  background-image: url('/images/hermanosjota.jpg');
-  background-size: cover;
+  background-image: url('http://localhost:4000/images/hermanosjota.png');
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center;
+  background-color: var(--siena-tostado);
   display: flex;
   align-items: center;
   padding-left: 6%;
 }
 
+.hero-img {
+  position: absolute;
+  right: 0;
+  height: 80%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
 .hero-text {
-  max-width: 500px;
-  background: rgba(245, 230, 211, 0.85);
-  padding: 30px 40px;
+  z-index: 10;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 45px 50px;
   border-left: 6px solid var(--siena-tostado);
   border-radius: 4px;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.12);
 }
 
 .hero-text h1 {
   font-family: var(--font-secundaria);
-  font-size: 38px;
-  margin-bottom: 15px;
+  font-size: 48px;
   line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--siena-tostado);
+  margin-bottom: 20px;
 }
 
 .hero-text p {
   font-family: var(--font-primaria);
-  font-size: 15px;
-  margin-bottom: 25px;
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 30px;
 }
 
 .hero-btn {
   background-color: var(--siena-tostado);
   color: white;
-  padding: 12px 22px;
-  text-decoration: none;
+  padding: 14px 28px;
   font-weight: 600;
-  border-radius: 4px;
-  letter-spacing: 0.1em;
-  transition: 0.3s;
+  border-radius: 30px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: 0.3s ease;
 }
 
 .hero-btn:hover {
   background-color: var(--verde-salvia);
+  transform: translateY(-2px);
 }
+
 
 .destacada {
   text-align: center;
-  padding: 80px 40px;
+  padding: 100px 40px;
+  background: var(--alabastro);
 }
 
 .destacada h2 {
   font-family: var(--font-secundaria);
-  font-size: 32px;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--siena-tostado);
-  letter-spacing: 0.1em;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .destacada p {
-  max-width: 600px;
-  margin: 0 auto 40px;
-  font-size: 15px;
+  max-width: 650px;
+  margin: 0 auto 50px;
+  font-size: 17px;
   color: #444;
+  font-family: var(--font-primaria);
 }
 
 .destacada-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 35px;
-  padding: 0 40px;
+  gap: 45px;
 }
 
 .destacada-card {
   background: white;
-  padding: 20px;
-  border-radius: 6px;
-  transition: 0.3s;
+  padding: 25px;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.08);
   cursor: pointer;
 }
 
 .destacada-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-6px);
 }
 
 .destacada-card img {
   width: 100%;
-  border-radius: 6px;
-  margin-bottom: 15px;
+  border-radius: 8px;
+  margin-bottom: 18px;
 }
 
 .destacada-card h3 {
   font-family: var(--font-secundaria);
-  letter-spacing: 0.06em;
+  font-size: 22px;
+  letter-spacing: 0.04em;
   color: var(--siena-tostado);
-  font-size: 18px;
 }
