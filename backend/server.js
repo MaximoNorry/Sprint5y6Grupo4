@@ -3,14 +3,16 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const productRoutes = require('./routes/productRoutes');
-const app = express();
 const path = require('path');
+
+const app = express();
 const PORT = process.env.PORT || 4000;
 
-app.use(cors({
-  origin: "https://sprint5y6.vercel.app"
-}));
+const corsOptions = {
+  origin: "https://sprint5y6.vercel.app",
+};
 app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use('/images', express.static(path.join(__dirname, 'public', 'images')));
 app.use('/api/productos', productRoutes);
