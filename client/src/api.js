@@ -6,12 +6,12 @@ export async function getProductos() {
 }
 
 export async function getProductoPorId(id) {
-  const res = await fetch(`${BASE_URL}/api/productos/${id}`);
+  const res = await fetch(`${BASE_URL}/productos/${id}`);
   return res.json();
 }
 
 export async function crearProducto(data) {
-  const res = await fetch(`${BASE_URL}/api/productos`, {
+  const res = await fetch(`${BASE_URL}/productos`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -20,7 +20,7 @@ export async function crearProducto(data) {
 }
 
 export async function actualizarProducto(id, data) {
-  const res = await fetch(`${BASE_URL}/api/productos/${id}`, {
+  const res = await fetch(`${BASE_URL}/productos/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -29,7 +29,7 @@ export async function actualizarProducto(id, data) {
 }
 
 export async function eliminarProducto(id) {
-  const res = await fetch(`${BASE_URL}/api/productos/${id}`, {
+  const res = await fetch(`${BASE_URL}/productos/${id}`, {
     method: "DELETE",
   });
   return res.json();
