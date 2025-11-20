@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { getProductoPorId } from "../api";
-import "./ProductoDetalle.css";
+import "./productodetalle.css";
 
 export default function ProductoDetalle() {
   const { id } = useParams();
